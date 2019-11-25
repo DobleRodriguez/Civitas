@@ -18,7 +18,7 @@ module Civitas
       @lista_gestiones_inmobiliarias = [GestionesInmobiliarias::VENDER, GestionesInmobiliarias:: HIPOTECAR, GestionesInmobiliarias::CANCELAR_HIPOTECA, GestionesInmobiliarias::CONSTRUIR_CASA, GestionesInmobiliarias::CONSTRUIR_HOTEL, GestionesInmobiliarias::TERMINAR]
     end
     
-    attr_reader :lista_respuestas, :lista_salidas_carcel, :lista_gestiones_inmobiliarias, i_gestion, i_propiedad
+    attr_reader :lista_respuestas, :lista_salidas_carcel, :lista_gestiones_inmobiliarias, :i_gestion, :i_propiedad
 
     def mostrar_estado(estado)
       puts estado

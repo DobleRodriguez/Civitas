@@ -19,8 +19,11 @@ module Civitas
     end
     
     attr_reader :num_casilla_carcel, :num_casilla_actual, :puede_comprar, :encarcelado
-
+    attr_reader :nombre
+    attr_reader :propiedades, :saldo
+    
     attr_writer :saldo
+
 
     def cancelar_hipoteca(ip)
       result = false
@@ -335,7 +338,8 @@ module Civitas
       end
     end
 
-    attr_reader :nombre, :propiedades, :saldo
+    #attr_reader :propiedades, :saldo
+    #attr_reader :nombre
 
     # Constructor de copia?
   end

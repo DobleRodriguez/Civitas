@@ -4,7 +4,7 @@ module Civitas
   class Tablero
     
     def initialize(num_casilla_carcel)
-      @num_casilla_carcel = num_casilla_carcel > 1 ? num_casilla_carcel : 1
+      @num_casilla_carcel = num_casilla_carcel >= 1 ? num_casilla_carcel : 1
       @casillas           = [Casilla.new_descanso("Salida")]
       @por_salida         = 0
       @tiene_juez         = false

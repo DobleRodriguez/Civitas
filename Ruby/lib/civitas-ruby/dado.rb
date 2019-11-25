@@ -19,7 +19,7 @@ module Civitas
     end
 
     def salgo_de_la_carcel
-      tirar == @@SALIDACARCEL
+      tirar >= @@SALIDACARCEL
     end
 
     def quien_empieza(n)
