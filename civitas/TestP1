@@ -1,0 +1,59 @@
+package civitas;
+
+class TestP1 {
+    public static void main (String[] args) {
+        System.out.println("Tarea 1");
+        int jugadorEmpieza;
+        int cantidadJugadores = 4;
+        int cantidadTiradas = 100;
+        int[] contador1 = new int[cantidadJugadores];
+        for (int i = 0; i < cantidadTiradas; i++) {
+            jugadorEmpieza = Dado.getInstance().quienEmpieza(cantidadJugadores);
+            contador1[jugadorEmpieza]++;
+        }
+        for (int i = 0; i < cantidadJugadores; i++)
+            System.out.println(contador1[i]);
+
+        System.out.println("Tarea 2");
+        Dado.getInstance().setDebug(true);
+        int contador2 = 0;
+        for (int i = 0; i < cantidadTiradas; i++) {
+            contador2 += Dado.getInstance().tirar();
+        }
+        System.out.println(contador2);
+
+        System.out.println("Tarea 3");
+        System.out.println(Dado.getInstance().getUltimoResultado());
+        System.out.println(Dado.getInstance().salgoDeLaCarcel());
+
+        System.out.println("Tarea 4");
+        System.out.println(EstadosJuego.INICIO_TURNO);
+        System.out.println(TipoCasilla.JUEZ);
+        System.out.println(TipoSorpresa.IRCARCEL);
+
+        System.out.println("Tarea 5");
+        MazoSorpresas mazoS = new MazoSorpresas();
+        Sorpresa s1 = new Sorpresa();
+        Sorpresa s2 = new Sorpresa();
+        mazoS.alMazo(s1);
+        mazoS.alMazo(s2);
+        mazoS.siguiente();
+        mazoS.inhabilitarCartaEspecial(s2);
+        mazoS.habilitarCartaEspecial(s2);
+
+        System.out.println("Tarea 6");
+        System.out.println(Diario.getInstance().eventosPendientes());
+        System.out.println(Diario.getInstance().leerEvento());
+
+        System.out.println("Tarea 7");
+        Tablero tablero = new Tablero(2);
+        Casilla c1 = new Casilla("No se");
+        Casilla c2 = new Casilla("Yo tampoco");
+        Casilla c3 = new Casilla("Why are we here");
+        Casilla c4 = new Casilla("Just to suffer?");
+        tablero.añadeCasilla(c1);
+        tablero.añadeCasilla(c2);
+        tablero.añadeCasilla(c3);
+        tablero.añadeCasilla(c4);
+    }
+}
